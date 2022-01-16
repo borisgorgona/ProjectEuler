@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function inventoryList(){
+            const names = [];
+            const idx = [];
+            return {
+                add: (name) => {
+                        if (name !== "" && names.length < 10 && names.indexOf(name) == -1){
+                            names.push(name);
+                            idx.push(names.indexOf(name));
+                        }
+                }, 
+                remove: (name) => {
+                    var idx = names.indexOf(name);
+                    names.splice(idx,1)
+                }, 
+                getList: () => {idx.forEach(el => names[el])}
+            }
+        }
+
+
+    </script>
+
+
+</body>
+</html>
